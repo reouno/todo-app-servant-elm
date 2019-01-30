@@ -40,7 +40,7 @@ access to [http://localhost:3000](http://localhost:3000)
 - [x] delete todo
 - [x] show todos not done yet
 - [x] show todos already done
-- [ ] automatically record done datetime
+- [x] automatically record done datetime
 - [ ] auto deletion of old and done todos
 - [ ] set due to todo
 - [ ] reminder feature
