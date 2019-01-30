@@ -20,4 +20,4 @@ access to [http://localhost:3000](http://localhost:3000)
 
 ## License
 
-This software is released under the MIT license, see LICENSE.
+This software is released under the MIT license, see [LICENSE](https://github.com/reouno/todo-app-servant-elm/blob/master/LICENSE).
