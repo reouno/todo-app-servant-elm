@@ -4,3 +4,4 @@ frontend/node_modules
 www/dist
 *.log
 *.sqlite3*
+TestModel.hs
