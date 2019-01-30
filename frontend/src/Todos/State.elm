@@ -1,6 +1,8 @@
 module Todos.State exposing (..)
 
 import Return exposing (Return)
+import Task
+import Time
 
 import Api.TodoApi as TodoApi
 import Todos.Types exposing (..)
@@ -37,13 +39,21 @@ update msg model =
                             , Cmd.none )
                 Err error ->
                     ( model, Cmd.none )
-        CheckTodo todoId isChecked ->
+        GetCurrentTimeForCheckTodo todoId isChecked ->
+            ( model, Task.perform (CheckTodo todoId isChecked) Time.now )
+        CheckTodo todoId isChecked time ->
             let
                 maybeTodo = List.head (List.filter (\t -> t.id == todoId) model)
+                doneAt = if isChecked == True
+                    then Just time
+                    else Nothing
             in
                 case maybeTodo of
                     Just todo ->
-                        ( model, TodoApi.putTodo { todo | done = isChecked } )
+                        ( model
+                        , TodoApi.putTodo
+                            { todo | done = isChecked, doneAt = doneAt }
+                        )
                     Nothing ->
                         ( model, Cmd.none )
         OnCheckTodo result ->

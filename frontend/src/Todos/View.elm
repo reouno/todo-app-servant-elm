@@ -44,7 +44,7 @@ checkButton todo =
             []
             []
             [ checked todo.done
-            , onCheck (CheckTodo todo.id)
+            , onCheck (GetCurrentTimeForCheckTodo todo.id)
             ]
             []
         ]

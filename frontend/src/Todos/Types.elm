@@ -23,7 +23,8 @@ type DoneFilter
 type Msg
     = FetchTodos DoneFilter
     | GotTodos DoneFilter (Result Http.Error Todos)
-    | CheckTodo TodoId Bool
+    | GetCurrentTimeForCheckTodo TodoId Bool
+    | CheckTodo TodoId Bool Time.Posix
     | OnCheckTodo (Result Http.Error Todo)
     | DeleteTodo TodoId
     | OnDeleteTodo TodoId (Result Http.Error ())
