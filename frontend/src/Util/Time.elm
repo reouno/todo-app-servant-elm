@@ -1,6 +1,7 @@
 module Util.Time exposing (..)
 
 import String exposing (fromInt, padLeft)
+import Task
 import Time exposing (..)
 
 toString : Zone -> Posix -> String
@@ -33,3 +34,7 @@ toIntMonth month =
         Oct -> 10
         Nov -> 11
         Dec -> 12
+
+msgWithTime : (Time.Posix -> msg) -> Task.Task Never Time.Posix -> Cmd msg
+msgWithTime msg time =
+    Task.perform msg time
