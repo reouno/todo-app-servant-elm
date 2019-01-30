@@ -9,6 +9,7 @@ import Api.TodoApi as TodoApi
 import NewTodo.Types exposing (..)
 import Todos.State exposing (initialTodo)
 import Todos.Types as Todos
+import Util.Time exposing (msgWithTime)
 
 update : Msg -> Todos.Todo -> Return Msg Todos.Todo
 update msg model =
@@ -31,7 +32,7 @@ update msg model =
             if String.length model.title == 0 then
                 ( model, Cmd.none )
             else
-                ( model, Task.perform CreateNewTodoAfterCurrentTime Time.now )
+                ( model, msgWithTime CreateNewTodoAfterCurrentTime Time.now )
         CreateNewTodoAfterCurrentTime time ->
             let
                 newTodo = { model | created = Just time }

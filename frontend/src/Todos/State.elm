@@ -6,6 +6,7 @@ import Time
 
 import Api.TodoApi as TodoApi
 import Todos.Types exposing (..)
+import Util.Time exposing (msgWithTime)
 
 initialTodos : Todos
 initialTodos = []
@@ -40,7 +41,7 @@ update msg model =
                 Err error ->
                     ( model, Cmd.none )
         GetCurrentTimeForCheckTodo todoId isChecked ->
-            ( model, Task.perform (CheckTodo todoId isChecked) Time.now )
+            ( model, msgWithTime (CheckTodo todoId isChecked) Time.now )
         CheckTodo todoId isChecked time ->
             let
                 maybeTodo = List.head (List.filter (\t -> t.id == todoId) model)
