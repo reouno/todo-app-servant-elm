@@ -45,6 +45,35 @@ module.exports = {
 				]
 			},
             {
+                test: /\.scss/,
+                use: [
+                    {
+                        // output to link tag
+                        loader: 'style-loader'
+                    },
+                    // bundle css
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            // prohibit `url()` in css`
+                            url: false,
+                            // use source map
+                            sourceMap: true,
+                            // 0 => no loaders
+                            // 1 => postcss-loader
+                            // 2 => postcss-loader, sass-loader
+                            importLoaders: 2
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.elm$/,
                 exclude: [
                     /elm_stuff/,

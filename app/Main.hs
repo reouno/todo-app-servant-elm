@@ -3,7 +3,7 @@ module Main where
 import Network.Wai.Handler.Warp
 import System.IO
 
-import Lib
+import App
 
 main :: IO ()
 main = do

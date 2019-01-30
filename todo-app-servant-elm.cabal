@@ -15,18 +15,35 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:     Apis.TodoApi
+                     , App
+                     , Config.Config
+                     , DataStore.Internal
+                     , Handlers.TodoHandler
+                     , Models
   build-depends:       base >= 4.7 && < 5
                      , aeson
                      , bytestring
                      , blaze-html
                      , containers
+                     , elm-export
+                     , elm-export-persistent
                      , filepath
                      , http-api-data
                      , http-media
-                     , servant-blaze
+                     , monad-logger
+                     , persistent
+                     , persistent-sqlite
+                     , persistent-template
+                     , servant
+                     , servant-elm
                      , servant-server
+                     , shelly
+                     , string-conversions
                      , stm
+                     , text
+                     , time
+                     , unliftio-core
                      , wai
                      , warp
   default-language:    Haskell2010
