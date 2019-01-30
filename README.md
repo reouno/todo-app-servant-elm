@@ -18,6 +18,23 @@ $ stack exec todo-app-servant-elm-exe
 
 access to [http://localhost:3000](http://localhost:3000)
 
+# Todo
+
+- [x] create new todo
+- [x] check done to todo
+- [x] delete todo
+- [x] show todos not done yet
+- [x] show todos already done
+- [ ] automatically record done datetime
+- [ ] auto deletion of old and done todos
+- [ ] set due to todo
+- [ ] reminder feature
+- [ ] user account registration
+- [ ] user authentication
+- [ ] activity statistics
+- [ ] todo contents statistics
+- [ ] sofisticated UI and beautiful design
+
 ## License
 
 This software is released under the MIT license, see [LICENSE](https://github.com/reouno/todo-app-servant-elm/blob/master/LICENSE).
