@@ -2,18 +2,26 @@
 
 # Run
 
+### build all and run
+
+```
+./build_run.sh
+```
+
+### execute commands step by step
+
 ```
 # build backend
-$ stack build
+stack build
 
 # build frontend
-$ cd frontend
-$ yarn install # only for the first time
-$ yarn webpack
+cd frontend
+yarn install # only for the first time
+yarn webpack
 
 # run server
-$ cd ..
-$ stack exec todo-app-servant-elm-exe
+cd ..
+stack exec todo-app-servant-elm-exe
 ```
 
 access to [http://localhost:3000](http://localhost:3000)
