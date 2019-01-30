@@ -17,3 +17,7 @@ $ stack exec todo-app-servant-elm-exe
 ```
 
 access to [http://localhost:3000](http://localhost:3000)
+
+## License
+
+This software is released under the MIT license, see LICENSE.
