@@ -1,5 +1,12 @@
 # todo-app-servant-elm
 
+# Environment
+
+- Haskell Stack v1.9.3
+- node v6.13.1
+- yarn v1.13.0
+- Elm 0.19.0 (automatically installed by `yarn install`)
+
 # Run
 
 ### build all and run
